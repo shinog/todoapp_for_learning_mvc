@@ -7,14 +7,12 @@
 //
 
 import UIKit
-import SwiftyJSON
 
 class ToDoListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem()
-        
         TaskList().setTask([Task(id: 1, order: 1, content: "最初のテストタスク")])
     }
     

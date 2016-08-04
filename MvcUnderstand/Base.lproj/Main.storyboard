@@ -58,17 +58,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pMF-Bv-jal">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タスク名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pMF-Bv-jal">
                                 <rect key="frame" x="40" y="104" width="521" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="タスクを入力してください。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBv-in-3rO">
+                                <rect key="frame" x="190" y="142" width="221" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.31937824209999999" blue="0.1799345608" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQ6-Z8-QIw">
+                                <rect key="frame" x="40" y="210" width="520" height="30"/>
+                                <color key="backgroundColor" red="0.60467180616189786" green="0.37362227298345663" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveTask:" destination="GGW-VF-Bwi" eventType="touchUpInside" id="Mam-gu-zgb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cBv-in-3rO" firstAttribute="centerX" secondItem="zSH-Dl-Dsr" secondAttribute="centerX" id="5iQ-7Y-B6q"/>
                             <constraint firstItem="pMF-Bv-jal" firstAttribute="top" secondItem="18k-BH-bir" secondAttribute="bottom" constant="40" id="8L9-ah-i55"/>
                             <constraint firstItem="pMF-Bv-jal" firstAttribute="leading" secondItem="zSH-Dl-Dsr" secondAttribute="leadingMargin" constant="20" id="GFG-sJ-qjP"/>
                             <constraint firstItem="pMF-Bv-jal" firstAttribute="centerX" secondItem="zSH-Dl-Dsr" secondAttribute="centerX" id="JJT-Ao-OeJ"/>
+                            <constraint firstItem="nQ6-Z8-QIw" firstAttribute="leading" secondItem="zSH-Dl-Dsr" secondAttribute="leadingMargin" constant="20" id="b73-b1-1hK"/>
+                            <constraint firstItem="nQ6-Z8-QIw" firstAttribute="centerX" secondItem="zSH-Dl-Dsr" secondAttribute="centerX" id="gsu-BK-gcD"/>
+                            <constraint firstItem="cBv-in-3rO" firstAttribute="top" secondItem="pMF-Bv-jal" secondAttribute="bottom" constant="10" id="iJn-Eb-bhd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nQ6-Z8-QIw" secondAttribute="trailing" constant="20" id="jL8-Sx-kGA"/>
+                            <constraint firstItem="nQ6-Z8-QIw" firstAttribute="top" secondItem="cBv-in-3rO" secondAttribute="bottom" constant="45" id="vYs-Jd-f1j"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -78,14 +100,12 @@
                                 <action selector="cancelButton:" destination="GGW-VF-Bwi" id="fa9-LA-nhE"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="6Ky-FY-5LT">
-                            <connections>
-                                <action selector="saveButton:" destination="GGW-VF-Bwi" id="oFh-Td-6Hx"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ValidationLabel" destination="cBv-in-3rO" id="Tvd-IT-eCc"/>
+                        <outlet property="saveButton" destination="nQ6-Z8-QIw" id="t5W-rA-DfS"/>
                         <outlet property="textfield" destination="pMF-Bv-jal" id="GT2-ZK-oeS"/>
+                        <outlet property="validationLabel" destination="cBv-in-3rO" id="EDO-ge-xQi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLb-BH-Hz6" userLabel="First Responder" sceneMemberID="firstResponder"/>
